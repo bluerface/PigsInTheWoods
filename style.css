@@ -3,13 +3,14 @@ body{
   margin: 0;
   background-image: url("images/cork-wallet.png");
   background-repeat: repeat;
+  background-attachment: fixed;
   }
 
 .wrapper {
   width: 1000px;
   height: 100%;
   margin: 30px auto;
-  padding: 15px;
+  padding: 35px;
   background-color: white;
   box-shadow: 3px 3px 10px 6px #d6dcd6;
 }
@@ -17,22 +18,61 @@ body{
 #header-img {
   width: 100%;
   height: 300px;
+  background-image: url("images/header.jpg");
+  background-position: 0% 60%;
+  background-size: 100%;
+}
+
+/*------ nav stuff------*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /*-webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-padding-start: 0;*/
 }
 
 nav li {
   float: left;
-  border: solid 1px black;
-  padding: 5px 10px;
-  margin: 0 5px 10px 0;
-  box-sizing: border-box;
-  width: 162px;
-  list-style: none;
+  margin: 0 5px 0 0;
+  position: relative;
 }
 
 nav li:last-child {
   margin-right: 0;
 }
-nav:after {
+
+nav a {
+  display: block;
+  border: solid 1px black;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  width: 162px;
+  z-index: 2;
+}
+
+nav li ul {
+  position: absolute;
+  box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.3);;
+  display: none;
+}
+
+nav li:hover ul {
+  display: block;
+}
+
+nav li ul li {
+  float: none;
+  margin-right: 0;
+}
+
+nav li ul a {
+  border-top: none;
+  z-index: 1;
+}
+
+nav:after {  /*-----clearfix-----*/
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
    display: block;
@@ -40,19 +80,13 @@ nav:after {
    clear: both;
 }
 
-nav ul {
-  list-style-type: none;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-padding-start: 0;
-}
  header {
    margin-bottom: 40px;
  }
 
-.content  {
+/*.content  {
   padding: 0 20px 20px;
-}
+}*/
 
 /*---- fonts ----*/
 
@@ -105,22 +139,24 @@ header h1 {
 header h2 {
   font-size: 70px;
   letter-spacing: 61px;
+  position: relative;
+  /*top: -20px;
+  margin-bottom: -20px;*/
 }
 
-nav li {
+nav li a {
+  text-decoration: none;
+  color: inherit;
+  background-color: white;
   text-transform: uppercase;
   text-align: center;
   font-size: 25px;
   letter-spacing: 1px;
 }
 
-nav li a {
-  text-decoration: none;
-  color: inherit;
-}
-
-nav li:hover {
+nav a:hover {
   background-color: #d6dcd6;
+  box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.3);
 }
 
 h1 {
