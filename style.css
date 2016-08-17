@@ -1,3 +1,5 @@
+.slabtexted .slabtext{display:-moz-inline-box;display:inline-block;white-space:nowrap}.slabtextinactive .slabtext{display:inline;white-space:normal;font-size:1em !important;letter-spacing:inherit !important;word-spacing:inherit !important;*letter-spacing:normal !important;*word-spacing:normal !important}.slabtextdone .slabtext{display:block}
+
 body{
   padding: 0;
   margin: 0;
@@ -21,6 +23,7 @@ body{
   background-image: url("images/header.jpg");
   background-position: 0% 60%;
   background-size: 100%;
+  margin-bottom: 10px;
 }
 
 /*------ nav stuff------*/
@@ -48,13 +51,15 @@ nav a {
   border: solid 1px black;
   padding: 5px 10px;
   box-sizing: border-box;
-  width: 162px;
+  /*width: 162px;*/
   z-index: 2;
+  overflow: hidden;
 }
 
 nav li ul {
   position: absolute;
-  box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.3);;
+  box-shadow: 3px 5px 16px 0px rgba(0,0,0,0.3);
+  width: 100%;
   display: none;
 }
 
@@ -92,32 +97,68 @@ nav:after {  /*-----clearfix-----*/
 
 @font-face {
     font-family: 'gooddog';
-    src: url('GoodDog-webfont.eot');
-    src: url('GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
-         url('GoodDog-webfont.woff') format('woff'),
-         url('GoodDog-webfont.ttf') format('truetype'),
-         url('GoodDog-webfont.svg#gooddogregular') format('svg');
+    src: url('fonts/GoodDog-webfont.eot');
+    src: url('fonts/GoodDog-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/GoodDog-webfont.woff') format('woff'),
+         url('fonts/GoodDog-webfont.ttf') format('truetype'),
+         url('fonts/GoodDog-webfont.svg#gooddogregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
+}
+
+/*@font-face {
+    font-family: 'rayandoregular';
+    src: url('fonts/rayando-webfont.eot');
+    src: url('fonts/rayando-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/rayando-webfont.woff2') format('woff2'),
+         url('fonts/rayando-webfont.woff') format('woff'),
+         url('fonts/rayando-webfont.ttf') format('truetype'),
+         url('fonts/rayando-webfont.svg#rayandoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}*/
+
+@font-face {
+    font-family: 'handdraft';
+    src: url('fonts/handwriting-draft_free-version-webfont.eot');
+    src: url('fonts/handwriting-draft_free-version-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/handwriting-draft_free-version-webfont.woff2') format('woff2'),
+         url('fonts/handwriting-draft_free-version-webfont.woff') format('woff'),
+         url('fonts/handwriting-draft_free-version-webfont.ttf') format('truetype'),
+         url('fonts/handwriting-draft_free-version-webfont.svg#handwriting-draft_free-versRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'sinkin_sans';
-    src: url('SinkinSans-200XLightItalic-webfont.eot');
-    src: url('SinkinSans-200XLightItalic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('SinkinSans-200XLightItalic-webfont.woff') format('woff'),
-         url('SinkinSans-200XLightItalic-webfont.ttf') format('truetype'),
-         url('SinkinSans-200XLightItalic-webfont.svg#sinkin_sans200_x_light_italic') format('svg');
+    font-family: 'sketchme';
+    src: url('fonts/sketch-me__free-version-webfont.eot');
+    src: url('fonts/sketch-me__free-version-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/sketch-me__free-version-webfont.woff2') format('woff2'),
+         url('fonts/sketch-me__free-version-webfont.woff') format('woff'),
+         url('fonts/sketch-me__free-version-webfont.ttf') format('truetype'),
+         url('fonts/sketch-me__free-version-webfont.svg#sketch_me_free-versionregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'bodedo';
+    src: url('fonts/HVD_Bodedo-webfont.eot');
+    src: url('fonts/HVD_Bodedo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/HVD_Bodedo-webfont.woff') format('woff'),
+         url('fonts/HVD_Bodedo-webfont.ttf') format('truetype'),
+         url('fonts/HVD_Bodedo-webfont.svg#hvd_bodedomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1, h2, header li, header hr {
-  font-family: gooddog;
-  color: teal;
-  letter-spacing: 1px;
+  font-family: bodedo;
+  color: #32675b;
+  /*letter-spacing: 1px;*/
 }
 
 h1, h2 {
@@ -128,21 +169,26 @@ h1, h2 {
 header h1, header h2 {
   text-align: center;
   text-transform: uppercase;
-  padding-left: 5px;
 }
 
-header h1 {
+/*header h1 {
   font-size: 110px;
   letter-spacing: 20px;
-}
-
+}*/
+/*
 header h2 {
   font-size: 70px;
   letter-spacing: 61px;
   position: relative;
-  /*top: -20px;
-  margin-bottom: -20px;*/
+}*/
+#slab1, #slab2 {
+  text-align: center;
+  margin: auto;
 }
+
+/*.slabtext-linesize-1 {
+  line-height: 1em;
+}*/
 
 nav li a {
   text-decoration: none;
@@ -150,8 +196,8 @@ nav li a {
   background-color: white;
   text-transform: uppercase;
   text-align: center;
-  font-size: 25px;
-  letter-spacing: 1px;
+  font-size: 20px;
+  /*letter-spacing: 1px;*/
 }
 
 nav a:hover {
